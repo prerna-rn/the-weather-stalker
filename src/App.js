@@ -7,7 +7,7 @@ import { fetchWeatherData } from './api/OpenWeatherService';
 import { transformDateFormat } from './utilities/DatetimeUtils';
 import UTCDatetime from './components/Reusable/UTCDatetime';
 import LoadingBox from './components/Reusable/LoadingBox';
-import { ReactComponent as SplashIcon } from './assets/splash-icon.svg';
+import { ReactComponent as SplashIcon } from './assets/wind-weather-svgrepo-com.svg';
 import Logo from './assets/logo.png';
 import ErrorBox from './components/Reusable/ErrorBox';
 import { ALL_DESCRIPTIONS } from './utilities/DateConstants';
@@ -90,8 +90,7 @@ function App() {
           lineHeight: '22px',
         }}
       >
-        Explore current weather data and 6-day forecast of more than 200,000
-        cities!
+        Step into the weather time machine! Discover today’s weather and the 6-day forecast for over 200,000 cities!
       </Typography>
     </Box>
   );
@@ -192,7 +191,7 @@ function App() {
 
             <UTCDatetime />
             <Link
-              href="https://github.com/Amin-Awinti"
+              href="https://github.com/prerna-rn/the-weather-stalker"
               target="_blank"
               underline="none"
               sx={{ display: 'flex' }}
