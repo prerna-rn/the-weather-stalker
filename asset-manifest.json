@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/the-weather-stalker/static/css/main.0cace0c0.css",
+    "main.js": "/the-weather-stalker/static/js/main.54d68d6d.js",
+    "static/media/logo.png": "/the-weather-stalker/static/media/logo.0180fb07c5dc0f4023b8.png",
+    "static/media/wind-weather-svgrepo-com.svg": "/the-weather-stalker/static/media/wind-weather-svgrepo-com.15ad6245aa17d69d681f97576bde8f39.svg",
+    "static/media/humidity.svg": "/the-weather-stalker/static/media/humidity.d49e9f30f5ed097d7ecdbfb6f2744835.svg",
+    "index.html": "/the-weather-stalker/index.html",
+    "main.0cace0c0.css.map": "/the-weather-stalker/static/css/main.0cace0c0.css.map",
+    "main.54d68d6d.js.map": "/the-weather-stalker/static/js/main.54d68d6d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0cace0c0.css",
+    "static/js/main.54d68d6d.js"
+  ]
+}
