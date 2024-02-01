@@ -12,6 +12,7 @@ body {
   min-height: 100vh;
   /* background-image: url('./assets/snowflakes-blurred-lights.jpg'); */
   background: linear-gradient(-35deg, #81689D 0%, #1F2544);
+  /* background: linear-gradient(-35deg, #A367B1 0%, #392467); */
   /* background: linear-gradient(-35deg, #000000 0%, #294B29); */
 }
 
