@@ -1,3 +1,7 @@
+👉🏻Test on thunderclient GET api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={api_key} <br> API calls return an error 401  You can get the error 401 in the following cases:  You did not specify your API key in API request. Your API key is not activated yet. Within the next couple of hours, it will be activated and ready to use. <br> https://www.youtube.com/watch?v=MdIfZJ08g2I
+
+
+
 ![Application screenshot](./public/screenshot.png)
 
 <br/>
