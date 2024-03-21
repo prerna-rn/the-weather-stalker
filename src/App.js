@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState }from 'react';
+import { useEffect } from 'react';
 import { Box, Container, Grid, Link, SvgIcon, Typography } from '@mui/material';
 import Search from './components/Search/Search';
 import WeeklyForecast from './components/WeeklyForecast/WeeklyForecast';
@@ -148,6 +149,45 @@ function App() {
       </Box>
     );
   }
+  useEffect(() => {
+    const http = new XMLHttpRequest();
+    let result = document.querySelector("#result");
+
+    document.querySelector("#share").addEventListener("click", () => {
+      findMyCoordinates()
+    })
+
+    function findMyCoordinates() {
+      if(navigator.geolocation){
+        navigator.geolocation.getCurrentPosition((position) => {
+          const bdcApi = `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${position.coords.latitude}&longitude=${position.coords.longitude}`
+          getApi(bdcApi);
+        },
+        (err) => { 
+          alert(err.message)
+        })
+      } else {
+        alert("Geolocation is not supported by your browser")
+      }
+    }
+    
+    function getApi(bdcApi) {
+      http.open("GET", bdcApi);
+      http.send();
+      http.onreadystatechange = async function () {
+        if (this.readyState === 4 && this.status === 200) {
+          const results = JSON.parse(this.responseText);
+          const latitude = results.latitude;
+          const longitude = results.longitude;
+    
+          // Call the fetchWeatherData function with the latitude and longitude
+          const weatherData = await fetchWeatherData(latitude, longitude);
+          console.log(weatherData);
+          
+          }
+      };
+    }
+  }, []);
 
   return (
     <Container
@@ -205,11 +245,36 @@ function App() {
               />
             </Link>
           </Box>
-          <Search onSearchChange={searchChangeHandler} />
+          {/* <Search onSearchChange={searchChangeHandler} /> */}
+          <Box
+            display="flex"
+            flexDirection="column"
+            alignItems="center"
+            justifyContent="center"
+            width="100%"
+          >
+            <button 
+              id="share" 
+              style={{
+                backgroundColor: 'darkgreen', 
+                color: 'white', 
+                padding: '10px 20px', 
+                border: 'none', 
+                borderRadius: '5px', 
+                cursor: 'pointer',
+                marginBottom: '10px' // Add some space between the button and the search bar
+              }}
+            >
+              Share my Location
+            </button>
+          </Box>
+          <pre id="result"></pre>
+          <Search onSearchChange={searchChangeHandler} style={{ width: '100%' }} />
         </Grid>
         {appContent}
       </Grid>
     </Container>
+    
   );
 }
 
