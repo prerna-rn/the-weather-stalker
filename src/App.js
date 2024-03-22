@@ -179,12 +179,15 @@ function App() {
           const results = JSON.parse(this.responseText);
           const latitude = results.latitude;
           const longitude = results.longitude;
-    
+          const city = results.localityInfo.administrative[0].name;
+
           // Call the fetchWeatherData function with the latitude and longitude
           const weatherData = await fetchWeatherData(latitude, longitude);
-          console.log(weatherData);
-          
-          }
+          console.log(weatherData); // You can remove this line if you don't need it
+
+          // Call the searchChangeHandler function with the latitude, longitude, and city
+          searchChangeHandler({ value: `${latitude} ${longitude}`, label: city });
+        }
       };
     }
   }, []);
@@ -256,7 +259,7 @@ function App() {
             <button 
               id="share" 
               style={{
-                backgroundColor: 'darkgreen', 
+                backgroundColor: '#416D19', 
                 color: 'white', 
                 padding: '10px 20px', 
                 border: 'none', 
