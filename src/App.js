@@ -259,7 +259,7 @@ function App() {
             <button 
               id="share" 
               style={{
-                backgroundColor: '#416D19', 
+                backgroundColor: '#008170', 
                 color: 'white', 
                 padding: '10px 20px', 
                 border: 'none', 
@@ -268,7 +268,7 @@ function App() {
                 marginBottom: '10px' // Add some space between the button and the search bar
               }}
             >
-              Share my Location
+              Share My Location
             </button>
           </Box>
           <pre id="result"></pre>
